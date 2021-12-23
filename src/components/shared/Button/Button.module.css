@@ -1,0 +1,19 @@
+.Button {
+  background: transparent;
+  border: 0;
+  box-shadow: 0 0 2px 1px #ddd;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.Button:hover {
+  background: #195e5e;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}

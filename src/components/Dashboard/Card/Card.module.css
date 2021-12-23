@@ -1,0 +1,32 @@
+.card {
+  min-width: 200px;
+  min-height: 200px;
+  box-shadow: 0 0 10px;
+  background-color: #ddd;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.card:hover,
+  .card:focus {
+  transform: scale(1.1);
+  background-color: transparent;
+}
+
+.card-icon {
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.card-text {
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 200px;
+    height: 200px;
+    margin: 0 20px;
+  }
+}

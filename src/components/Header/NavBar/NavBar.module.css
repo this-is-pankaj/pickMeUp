@@ -1,0 +1,31 @@
+.navbar {
+
+}
+
+.nav {
+  list-style: none;
+  margin-bottom: 0;
+  display: none;
+}
+
+.nav-item {
+  border-bottom: 3px solid transparent;
+}
+
+.nav-item:hover,
+  .nav-item:focus {
+  border-color: #008080;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+  }
+}
