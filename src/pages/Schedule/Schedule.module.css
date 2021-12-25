@@ -1,3 +1,31 @@
 .schedule {
   
 }
+
+.schedule-form {
+  width: auto;
+  box-shadow: 0 0 5px;
+  padding: 30px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.form-options {
+  margin: 0px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .schedule-form {
+    width: 50%;
+    margin: auto;
+  }
+
+  .submit-btn {
+    width: auto;
+    min-width: 200px;
+  }
+}

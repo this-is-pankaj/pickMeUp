@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/use-auth';
 import Classes from './Login.module.css';
 
 const Login = () => {
+  const [creds, setCreds] = useState({
+    username: '',
+    password: '',
+  });
   const navigate = useNavigate();
-  const [creds, setCreds] = useState({});
+  const location = useLocation();
+  const auth = useAuth();
 
   const updateFormValues = (event) => {
     const fieldName = event.target.name;
@@ -12,11 +18,21 @@ const Login = () => {
     setCreds(initValue => ({...creds, [fieldName]: fieldValue}));
   };
 
-  const login = (event) => {
-    event.preventDefault();
-    const userCreds = {...creds};
-    // After successful validation, redirect the user
-    navigate('/dashboard', {replace: true});
+  const login = async (event) => {
+    try {
+      event.preventDefault();
+      const userCreds = {...creds};
+      const reqDetails = {
+        action: 'login',
+        data: {...userCreds}
+      };
+      await auth.signin(reqDetails);
+      navigate(location.state?.from || '/dashboard');
+    } catch(exc) {
+      console.log(exc);
+      alert('Login Error! Please try again.');
+      return;
+    }
   };
 
   return (

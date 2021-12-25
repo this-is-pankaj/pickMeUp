@@ -1,7 +1,3 @@
-export const apiMapper = {
-  login: '/api/login',
-};
-
 export const nav = {
   default: [
     {
@@ -61,3 +57,10 @@ export const cardsForRole = {
     },
   ],
 };
+
+export const pickups = [
+  {
+    pickupAddress: 'Daffodil Blooms',
+    dropAddress: 'Daffodil Merlins',
+  }
+];

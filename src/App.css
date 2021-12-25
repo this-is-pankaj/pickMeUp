@@ -28,6 +28,9 @@
   color: #ddd;
 }
 
+.m-0 {
+  margin: 0;
+}
 .mb-0 {
   margin-bottom: 0;
 }
@@ -56,4 +59,29 @@
   border: 0;
   outline: none;
   border-bottom: 1px solid ;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.table-responsive {
+  max-width: 100%;
+}
+
+.table-head {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.table-cell {
+  min-width: 100px;
+  padding: 10px;
+}
+
+tr.clickable:hover,
+  tr.clickable:focus {
+  box-shadow: 0 0 10px 0 #ddd;
+  scale: (1.1);
 }

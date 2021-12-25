@@ -4,4 +4,24 @@
 
 .user {
   text-align: right;
+  position: relative;
+}
+
+.user:hover .sub-menu{
+  display: block;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  box-shadow: 0 0 5px;
+  width: 75%;
+  padding: 10px;
+  text-align: center;
+  right: 0;
+}
+
+.logout-btn {
+  width: 100%;
 }
