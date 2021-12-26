@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
 import ForBiker from '../../components/Pickups/ForBiker/ForBiker';
 import ForCustomer from '../../components/Pickups/ForCustomer/ForCustomer';
 import { useAuth } from '../../contexts/use-auth';
-import { handleReq } from '../../utils/requests';
-import Classes from './Pickups.module.css';
 
 const Pickups = () => {
   const auth = useAuth();

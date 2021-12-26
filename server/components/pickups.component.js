@@ -65,12 +65,14 @@ const updateAsPerAction = ({updates, order, bikerId}, action) => {
         break;
 
       case 'pickedUp':
+        order.lastUpdatedAt = Date.now();
         updatesNeeded.updatedAt = order.lastUpdatedAt;
         updatesNeeded.status = 'in-transit';
         order.status = 'in-transit';
         break;
 
       case 'delivered':
+        order.lastUpdatedAt = Date.now();
         updatesNeeded.updatedAt = order.lastUpdatedAt;
         order.deliveredAt = order.lastUpdatedAt;
         updatesNeeded.status = 'delivered';

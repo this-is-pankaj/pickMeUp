@@ -1,0 +1,11 @@
+.report-meta,
+.report-detail,
+.tracker-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tracking-detail {
+  margin: 30px 0;
+}

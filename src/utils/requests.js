@@ -35,7 +35,7 @@ const defaultHeaders = () => {
 };
 
 export const handleReq = async ({action, data, qs, variables}) => {
-  const ep = apiMapper[action].url;
+  let ep = apiMapper[action].url;
   if(variables) {
     for(let key in variables) {
       ep = ep.replace(`:${key}`, variables[key]);

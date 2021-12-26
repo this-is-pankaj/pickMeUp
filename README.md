@@ -36,13 +36,19 @@ This delivery app comes with the following features:
 
 3. Self-assigning a pickup request: When logged in as a delivery guy, the scheduled pickups from customer awaiting assignee can be viewed and the user can self-assign a parcel by a simple click.
 
-4. Live-Tracking: The status of the parcel can be tracked with real time status updates by users - both customer and delviery guy.
+4. Live-Tracking: The status of the parcel can be tracked with real time status updates by users - both customer and delivery guy. The key point worth noting is that live updates are provided until the parcel is in-transit. Once delivered, the request is removed from the dashboard and the sae can be viewed in completed orders/ order history.
 
-5. History: Both delivery folks and customers can view their deliveries/ orders.
+5. History: Both delivery folks and customers can view their successfully delivered orders.
 
 6. Logout: Logs users out of the app
 
 7. Responsive Design: The app can be used on bith mobile devices and desktops alike.
+
+The lifecycle of a parcel can be summed up as:
+- Pending: The nascent state of a parcel request
+- Assigned: When a delivery executive assigns a request to him/herself
+- In-Transit: WHen the parcel has been collected from pickupAddress and moves towards destination
+- Delivered: Has reached the final destination.
 
 ## Running on your System
 To get started with the application, follow these simple steps:
@@ -66,6 +72,7 @@ The application is just a POC and the scope of implementations are limited.
 - Token exchange is done as a POC to make authentication applicable on APIs and not with JWT or Bearer tokens. These tokens don't expire as long as you don't restart the server.
 - Validations on form fields have not been implemented. All text fields are free flowing but expects inputs for smooth operation.
 - Some URL's like About, Contact, Help, etc won't work and have been put in place to showcase the use of 404 pages.
+- Real time feed is only available on dashboard for now. For all other sections refresh the page to see updated values.
 
 ## Tech Stack
 The web-app is build using:
