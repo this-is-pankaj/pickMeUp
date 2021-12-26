@@ -1,4 +1,4 @@
-const { filterListByStatus, filterListByUserId } = require("../components/pickups.component");
+const { filterListByStatus, filterListByUserId, updateAsPerAction } = require("../components/pickups.component");
 const pickups = require("../data/pickups");
 const { uuid } = require("../utils/common");
 
@@ -16,6 +16,7 @@ const schedulePickup = (req, res) => {
       status: 'pending',
       userId,
       orderId,
+      tracker: []
     });
     res.status(200).send({orderId, status: 'pending'});
   } catch(exc) {
@@ -27,9 +28,10 @@ const getPickupsByFilter = (req, res) => {
   try {
     const { userId, status } = req.query;
     let filteredList = [...pickups];
-    
-    if(status) {
-      filteredList = filterListByStatus(filteredList, status.toLowerCase());
+    if(status && status.length) {
+      filteredList = filterListByStatus(filteredList, status.map((s)=>{
+        return s.toLowerCase();
+      }));
     }
 
     if(userId) {
@@ -44,14 +46,22 @@ const getPickupsByFilter = (req, res) => {
 
 const updatePickup = (req, res) => {
   try {
-    const { userId, body, params: {orderId: orderId} } = req;
+    const { userId, body, query: {action: action, orderId: orderId} } = req;
+    
+    if(!action) {
+      res.status(400).send('Invalid inputs for updating order');
+      return;
+    }
     // The userId in this case is the delivery guy's ID
     // As modification by user is out of scope
     let hasUpdated = false;
     for(let i=0; i<pickups.length; i++) {
       if(pickups[i].orderId === orderId && !hasUpdated) {
-        pickups[i].updatedAt = Date.now();
-        pickups[i] = {...pickups[i], ...body};
+        pickups[i] = updateAsPerAction({
+          bikerId: userId,
+          updates: body,
+          order: pickups[i]
+        }, action)
         hasUpdated = true;
       }
     }
@@ -66,8 +76,23 @@ const updatePickup = (req, res) => {
   }
 };
 
+const getPickupsByOrderId = (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const order = pickups.find((p) => p.orderId === orderId);
+    if(!order) {
+      res.status(204).send('No order found');
+      return;
+    }
+    res.status(200).send({...order});
+  } catch(exc) {
+    res.status(500).send(exc);
+  }
+}
+
 module.exports = {
   schedulePickup,
   getPickupsByFilter,
   updatePickup,
+  getPickupsByOrderId
 };

@@ -4,7 +4,6 @@ import { useAuth } from "../../contexts/use-auth";
 // screen if you're not yet authenticated.
 const RequireAuth = ({children}) => {
   const auth = useAuth();
-  console.log(auth);
   const location = useLocation();
   if(!auth.user.id) {
     // Redirect them to the /login page, but save the current location they were

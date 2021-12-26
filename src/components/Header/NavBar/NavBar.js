@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import { nav } from "../../../utils/static";
 import Classes from './NavBar.module.css';
 
-const NavBar = (props) => {
-  const defaultNav = [...nav['default']];
-
+const NavBar = ({role}) => {
+  let pageNavs = [...nav['default']];
+  if(role) {
+    pageNavs = [...nav[role], ...pageNavs];
+  }
+  
   const linkClasses = [Classes['nav-link'], 'link-text'].join(' ');
-  const navItems = defaultNav.map((n, idx) => {
+  const navItems = pageNavs.map((n, idx) => {
     return (
       <li
         className={Classes['nav-item']}

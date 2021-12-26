@@ -2,7 +2,7 @@ module.exports = [
   {
     id: '1',
     username: 'customer1',
-    password: '123456',
+    password: '123456789',
     role: 'customer',
     user: {
       firstName: 'Pankaj',
@@ -12,11 +12,12 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '2',
     username: 'delivery1',
-    password: '1234567',
+    password: '123456789',
     role: 'delivery',
     user: {
       firstName: 'John',
@@ -26,11 +27,12 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '3',
     username: 'customer3',
-    password: '12345678',
+    password: '123456789',
     role: 'customer',
     user: {
       firstName: 'Customer',
@@ -40,6 +42,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '4',
@@ -54,6 +57,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '5',
@@ -68,6 +72,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '6',
@@ -82,6 +87,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '7',
@@ -96,6 +102,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '8',
@@ -110,6 +117,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '9',
@@ -124,6 +132,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '10',
@@ -138,6 +147,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '11',
@@ -152,6 +162,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '12',
@@ -166,6 +177,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '13',
@@ -180,6 +192,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '14',
@@ -194,6 +207,7 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   },
   {
     id: '15',
@@ -208,5 +222,6 @@ module.exports = [
         phone: '123456789'
       }
     },
+    sessions: []
   }
 ];

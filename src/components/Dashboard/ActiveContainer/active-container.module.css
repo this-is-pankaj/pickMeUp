@@ -1,4 +1,10 @@
 .active-container {
   border: 1px solid #ddd;
-  padding: 30px;
+  padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .active-container {
+    padding: 30px;
+  }
 }

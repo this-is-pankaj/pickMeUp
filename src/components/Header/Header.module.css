@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  justify-content: space-between;
   box-shadow: 0 0 10px;
 }
 
@@ -8,15 +9,22 @@
 }
 
 .navbar-container {
-  width: 60%;
-  padding-top: 5px;
+  display: none;
 }
 
 .user-options-container {
-  padding-top: 5px;
+  display: none;
 }
 
-@media screen and (min-width: 768px) {
+.m-wrapper {
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    justify-content: unset;
+  }
+
   .logo-container {
     padding-left: 30px;
     width: 20%;
@@ -25,5 +33,15 @@
   .user-options-container {
     padding-right: 30px;
     width: 20%;
+    padding-top: 5px;
+  }
+
+  .navbar-container {
+    width: 60%;
+    padding-top: 5px;
+  }
+
+  .m-wrapper {
+    display: none;
   }
 }

@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { pickups } from '../../utils/static';
 import Classes from './Schedule.module.css';
+import { handleReq } from '../../utils/requests';
 
 const Schedule = () => {
   const navigate = useNavigate();
@@ -15,11 +16,20 @@ const Schedule = () => {
     setSchedule(initValue => ({...schedule, [fieldName]: fieldValue}));
   };
 
-  const requestPickup = (event) => {
-    event.preventDefault();
-    const requestDetails = {...schedule};
-    pickups.push(requestDetails);
-    navigate('/pickups');
+  const requestPickup = async (event) => {
+    try {
+      event.preventDefault();
+      const requestDetails = {...schedule};
+      await handleReq({
+        action: 'schedulePickup',
+        data: requestDetails
+      });
+      navigate('/dashboard');
+    } catch(exc) {
+      console.log(exc);
+      alert('Unable to request. Please refresh and try again');
+      return;
+    }
   };
 
   return (

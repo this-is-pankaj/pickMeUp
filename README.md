@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# PickMeUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Index
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Running On Your System](#runningOnYourSystem)
+4. [Limitations](#limitations)
+5. [Tech Stack](#techStack)
 
-## Available Scripts
+## Introduction
+*PickMeUp* is a delivery tracking web-app meant to help users easily track their parcels.
 
-In the project directory, you can run:
+## Features
+This delivery app comes with the following features:
+1. Authentication: From a list of 5 customers and 10 delivery personnel. The username and passwords are as below:
+| Username | Password | Role |
+| customer1 | 123456789 | Customer|
+| customer3 | 123456789 | Customer|
+| customer4 | 123456789 | Customer|
+| customer5 | 123456789 | Customer|
+| customer6 | 123456789 | Customer|
+| delivery1 | 123456789 | Delivery Guy|
+| delivery2 | 123456789 | Delivery Guy|
+| delivery3 | 123456789 | Delivery Guy|
+| delivery4 | 123456789 | Delivery Guy|
+| delivery5 | 123456789 | Delivery Guy|
+| delivery6 | 123456789 | Delivery Guy|
+| delivery7 | 123456789 | Delivery Guy|
+| delivery8 | 123456789 | Delivery Guy|
+| delivery9 | 123456789 | Delivery Guy|
+| delivery10 | 123456789 | Delivery Guy|
 
-### `npm start`
+2. Create a Pickup Request: When logged in as a customer, user can schedule a pickup request. The only desired inputs are the source and destination address.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Self-assigning a pickup request: When logged in as a delivery guy, the scheduled pickups from customer awaiting assignee can be viewed and the user can self-assign a parcel by a simple click.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Live-Tracking: The status of the parcel can be tracked with real time status updates by users - both customer and delviery guy.
 
-### `npm test`
+5. History: Both delivery folks and customers can view their deliveries/ orders.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Logout: Logs users out of the app
 
-### `npm run build`
+7. Responsive Design: The app can be used on bith mobile devices and desktops alike.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running on your System
+To get started with the application, follow these simple steps:
+1. Checkout this repository
+```bash
+git clone https://github.com/this-is-pankaj/pickMeUp.git
+```
+2. Install all of the package dependencies
+```bash
+npm install
+```
+3. Run the application
+```bash
+npm run start
+```
+This should spin up a server on port 3000 and even bundle the front-end. Open up `http://localhost:3000` to experience the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Limitations
+The application is just a POC and the scope of implementations are limited.
+- Data is not persistent. So you will lose all sample pickups and updates once you restart the server.
+- Token exchange is done as a POC to make authentication applicable on APIs and not with JWT or Bearer tokens. These tokens don't expire as long as you don't restart the server.
+- Validations on form fields have not been implemented. All text fields are free flowing but expects inputs for smooth operation.
+- Some URL's like About, Contact, Help, etc won't work and have been put in place to showcase the use of 404 pages.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tech Stack
+The web-app is build using:
+- ReactJS: Client side
+- Express: Server Side Routes

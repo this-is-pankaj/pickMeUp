@@ -8,6 +8,26 @@ export const nav = {
       text: 'Contact Us',
       link: '/contact-us',
     },
+  ],
+  customer: [
+    {
+      text: 'Schedule',
+      link: '/schedule',
+    },
+    {
+      text: 'My Orders',
+      link: '/my-orders',
+    }
+  ],
+  delivery: [
+    {
+      text: 'Find Pickup',
+      link: '/pickups'
+    },
+    {
+      text: 'My Deliveries',
+      link: 'my-deliveries'
+    }
   ]
 };
 
@@ -39,11 +59,6 @@ export const cardsForRole = {
       icon: 'calendar',
       text: 'Pickups',
       link: '/pickups',
-    },
-    {
-      icon: 'sync-alt',
-      text: 'Update Status',
-      link: '/update-status',
     },
     {
       icon: 'grin-stars',

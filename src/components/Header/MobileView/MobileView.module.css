@@ -1,0 +1,53 @@
+.mobile-view {
+  height: 100%;
+}
+
+.m-icons {
+  height: 100%;
+}
+
+.menu-toggler {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+
+.m-menu {
+  position: absolute;
+  top: 50px;
+  left: -150%;
+  width: 100%;
+  height: calc(100% - 50px);
+  background: #ddd;
+  z-index: 9;
+}
+
+.slide-in {
+  left: 0;
+}
+
+.m-navs {
+  list-style: none;
+  padding: 0 40px;
+  margin: 30px 0;
+}
+
+.m-nav-links {
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.m-logout-option {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.m-logout-btn {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+}

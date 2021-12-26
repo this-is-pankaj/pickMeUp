@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Classes from './Logo.module.css';
 const Logo = (props) => {
   return (
@@ -5,7 +6,9 @@ const Logo = (props) => {
       {
         props.img
           ? <img src={props.img} alt={props.text}/>
-          : <h1 className={Classes['company-name']}>{props.text}</h1>
+          : <h1 className={Classes['company-name']}>
+            <Link to="/">{props.text}</Link>
+          </h1>
       }
     </div>
   )

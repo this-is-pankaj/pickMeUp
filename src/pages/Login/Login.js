@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const auth = useAuth();
-
+  
   const updateFormValues = (event) => {
     const fieldName = event.target.name;
     const fieldValue = event.target.value;

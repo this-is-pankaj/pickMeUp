@@ -15,11 +15,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route index element={<Login/>}/>
+            <Route index element={<RequireAuth><Dashboard/></RequireAuth>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="dashboard" element={<RequireAuth><Dashboard/></RequireAuth>}/>
             <Route path="schedule" element={<RequireAuth><Schedule/></RequireAuth>}/>
             <Route path="pickups" element={<RequireAuth><Pickups/></RequireAuth>}/>
+            <Route path="my-orders" element={<RequireAuth><Pickups/></RequireAuth>}/>
             <Route path="*" element={<NotFound/>}/>
           </Route>
         </Routes>

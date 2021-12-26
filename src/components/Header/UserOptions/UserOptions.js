@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../contexts/use-auth";
 import Classes from './UserOptions.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -9,12 +8,10 @@ library.add([
   faChevronDown
 ]);
 
-const UserOptions = (props) => {
-  const auth = useAuth();
+const UserOptions = ({id, user, onLogout}) => {
   const navigate = useNavigate();
-  const { id, user, username } = auth.user;
   const logout = () => {
-    auth.signout();
+    onLogout();
     navigate('/login');
   };
 
@@ -32,7 +29,7 @@ const UserOptions = (props) => {
             </p>
             <div className={Classes["sub-menu"]}>
               <button 
-                className={['.btn', Classes['logout-btn']].join(' ')}
+                className={['btn', Classes['logout-btn']].join(' ')}
                 onClick={logout}
               >Logout</button>
             </div>

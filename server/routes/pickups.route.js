@@ -1,8 +1,9 @@
 const express = require("express");
-const { schedulePickup, getAllPickups, getPickupsByFilter, updatePickup } = require("../controllers/pickups.controller");
+const { schedulePickup, getPickupsByFilter, updatePickup, getPickupsByOrderId } = require("../controllers/pickups.controller");
 const pickupsRouter = express.Router();
 
 pickupsRouter.post('/schedule', schedulePickup);
 pickupsRouter.get('/', getPickupsByFilter);
-pickupsRouter.put('/:orderId', updatePickup);
+pickupsRouter.get('/:orderId', getPickupsByOrderId);
+pickupsRouter.put('/', updatePickup);
 module.exports = pickupsRouter;

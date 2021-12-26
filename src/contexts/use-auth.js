@@ -12,7 +12,6 @@ const useProvideAuth = () => {
   
   const signin = async (reqDetails) => {
     try {
-      console.log(reqDetails);
       const user = await handleReq(reqDetails);
       setUser(user);
       // Also set the local values

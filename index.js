@@ -11,7 +11,9 @@ const http = require('http').Server(app);
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    exposedHeaders: ['App-token'],
+}));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/pickup', getUserId, pickupsRoutes);
