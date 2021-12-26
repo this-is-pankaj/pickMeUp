@@ -3,7 +3,7 @@
 ## Index
 1. [Introduction](#introduction)
 2. [Features](#features)
-3. [Running On Your System](#runningOnYourSystem)
+3. [Running On Your System](#running-on-your-system)
 4. [Limitations](#limitations)
 5. [Tech Stack](#techStack)
 
@@ -13,7 +13,9 @@
 ## Features
 This delivery app comes with the following features:
 1. Authentication: From a list of 5 customers and 10 delivery personnel. The username and passwords are as below:
+
 | Username | Password | Role |
+| -------- | -------- | ---- |
 | customer1 | 123456789 | Customer|
 | customer3 | 123456789 | Customer|
 | customer4 | 123456789 | Customer|
