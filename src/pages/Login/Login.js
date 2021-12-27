@@ -22,6 +22,10 @@ const Login = () => {
     try {
       event.preventDefault();
       const userCreds = {...creds};
+      if(!userCreds.username || !userCreds.password) {
+        alert("Invalid input. Username and password are mandatory to log in.");
+        return;
+      }
       const reqDetails = {
         action: 'login',
         data: {...userCreds}

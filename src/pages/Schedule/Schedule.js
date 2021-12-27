@@ -20,6 +20,10 @@ const Schedule = () => {
     try {
       event.preventDefault();
       const requestDetails = {...schedule};
+      if(!requestDetails.pickupAddress || !requestDetails.dropAddress) {
+        alert("Invalid Input. Pickup and drop address are required.");
+        return;
+      }
       await handleReq({
         action: 'schedulePickup',
         data: requestDetails
